@@ -11,7 +11,6 @@ describe 'redmine::default' do
     it {
       should_not be_directory
       should_not be_mode 755
-      should_not be_owned_by 'redmine'
     }
   end
 
@@ -19,7 +18,6 @@ describe 'redmine::default' do
     it {
       should_not be_file
       should_not be_mode 644
-      should_not be_owned_by 'redmine'
     }
   end
 

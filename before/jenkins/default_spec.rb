@@ -7,7 +7,6 @@ describe 'jenkins::default' do
     it {
       should_not be_directory
       should_not be_mode 755
-      should_not be_owned_by 'root'
     }
   end
 
@@ -15,7 +14,6 @@ describe 'jenkins::default' do
     it {
       should_not be_directory
       should_not be_mode 755
-      should_not be_owned_by 'root'
     }
   end
 

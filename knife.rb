@@ -1,4 +1,5 @@
-log_level                :info
-log_location             STDOUT
+log_level           :info
+log_location        STDOUT
 knife[:solo_path] = '/tmp/chef-solo'
-data_bag_path            'data_bags' 
+data_bag_path       'data_bags'
+ssl_verify_mode  	:verify_peer

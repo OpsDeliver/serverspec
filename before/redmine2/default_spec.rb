@@ -10,16 +10,17 @@ describe 'redmine::default' do
   context file('/home/redmine') do
     it {
       should_not be_directory
-      should_not be_mode 755
     }
   end
 
   context file('/home/redmine/redmine/Rakefile') do
     it {
       should_not be_file
-      should_not be_mode 644
     }
   end
 
 end
 
+describe port(80) do
+  it { should_not be_listening }
+end

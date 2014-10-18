@@ -6,16 +6,17 @@ describe 'jenkins::default' do
   context file('/var/lib/jenkins') do
     it {
       should_not be_directory
-      should_not be_mode 755
     }
   end
 
   context file('/var/log/jenkins') do
     it {
       should_not be_directory
-      should_not be_mode 755
     }
   end
 
 end
 
+describe port(8080) do
+  it { should_not be_listening }
+end

@@ -6,23 +6,33 @@ describe 'wordpress::default' do
   context file('/var/www/wordpress') do
     it {
       should_not be_directory
-      should_not be_mode 755
     }
   end
 
   context file('/var/www/wordpress/wp-config.php') do
     it {
       should_not be_file
-      should_not be_mode 644
     }
   end
 
-  context file('/etc/httpd/sites-available/wordpress.conf') do
-    it {
-      should_not be_file
-      should_not be_mode 644
-    }
+  if os[:family] == 'redhat'
+    context file('/etc/httpd/sites-available/wordpress.conf') do
+      it {
+        should_not be_file
+      }
+    end
+  end
+
+  if os[:family] == 'ubuntu' || 'debian'
+    context file('/etc/apache2/sites-available/wordpress.conf') do
+      it {
+        should_not be_file
+      }
+    end
   end
 
 end
 
+describe port(80) do
+  it { should_not be_listening }
+end

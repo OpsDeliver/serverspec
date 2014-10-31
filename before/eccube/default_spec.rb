@@ -1,6 +1,4 @@
 require 'spec_helper'
-require 'serverspec'
-include Serverspec::Helper::DetectOS
 
 describe 'eccube::default' do
   context file('/var/www/html') do

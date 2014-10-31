@@ -1,6 +1,4 @@
 require 'spec_helper'
-require 'serverspec'
-include Serverspec::Helper::DetectOS
 
 describe 'jenkins::default' do
   context file('/var/lib/jenkins') do

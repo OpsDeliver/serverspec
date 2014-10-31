@@ -1,6 +1,4 @@
 require 'spec_helper'
-require 'serverspec'
-include Serverspec::Helper::DetectOS
 
 describe 'zabbix::default' do
   context file('/etc/zabbix') do

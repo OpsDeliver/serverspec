@@ -1,6 +1,4 @@
 require 'spec_helper'
-require 'serverspec'
-include Serverspec::Helper::DetectOS
 
 describe user('redmine') do
   it { should_not exist }

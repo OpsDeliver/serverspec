@@ -1,6 +1,4 @@
 require 'spec_helper'
-require 'serverspec'
-include Serverspec::Helper::DetectOS
 
 describe 'munin::default' do
   context file('/etc/munin') do
